@@ -13,7 +13,7 @@ pipeline {
     stage('Package'){ steps { bat 'echo "Package project"' } }
   }
   post {
-    always  { echo '**/target/surefire-reports/*.xml' }
+    always  { junit '**/target/surefire-reports/*.xml' }
     success { echo '✔ Pipeline green' }
     failure { echo '✗ Build failed' }
   }
