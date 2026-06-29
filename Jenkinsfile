@@ -2,7 +2,7 @@ pipeline {
   agent any // can be run on any node/runner
   stages {
     stage('Clone') { steps {
-        git url: 'https://github.com/srengty/i3se-lab09-2026.git'
+        git branch: 'main', url: 'https://github.com/srengty/i3se-lab09-2026.git'
     }}
     stage('Build')  { steps { 
         bat 'echo "build the project"' } }
